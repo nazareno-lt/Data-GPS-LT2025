@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 
 # Configuración de la página
-st.set_page_config(page_title="Rugby Performance Dashboard", layout="wide")
+st.set_page_config(page_title="Data GPS Club de Rugby Los Tilos", layout="wide")
 # 2. Inyección de HTML para idioma y evitar teclado
 st.markdown(
     """
@@ -176,3 +176,4 @@ else:
             )
 
             st.plotly_chart(fig_evol, use_container_width=True)
+
