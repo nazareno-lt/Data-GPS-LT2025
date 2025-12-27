@@ -4,7 +4,23 @@ import plotly.graph_objects as go
 
 # Configuración de la página
 st.set_page_config(page_title="Rugby Performance Dashboard", layout="wide")
-
+# 2. Inyección de HTML para idioma y evitar teclado
+st.markdown(
+    """
+    <html lang="es">
+    <style>
+        /* Ocultar el cursor y evitar foco de teclado en los selects de móviles */
+        input[role="combobox"] {
+            caret-color: transparent !important;
+        }
+    </style>
+    <script>
+        // Cambiar el atributo de idioma dinámicamente
+        document.documentElement.lang = 'es';
+    </script>
+    """,
+    unsafe_allow_html=True
+)
 # --- COLORES ---
 VERDE_OSCURO = '#1b4d3e'
 AMARILLO_OSCURO = '#b8860b'
@@ -158,4 +174,5 @@ else:
                 yaxis_title=label,
                 margin=dict(l=20, r=20, t=40, b=20)
             )
+
             st.plotly_chart(fig_evol, use_container_width=True)
